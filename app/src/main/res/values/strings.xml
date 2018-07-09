@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VibeDriven</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoianVub2giLCJhIjoiY2ppOXBxYTgxMHo4MjNwbXJuczJtMzducSJ9.qbysUGP4yzJhl6d5QpN48Q</string>
+</resources>
