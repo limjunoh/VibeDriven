@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">VibeDriven</string>
     <string name="mapbox_access_token">pk.eyJ1IjoianVub2giLCJhIjoiY2ppOXBxYTgxMHo4MjNwbXJuczJtMzducSJ9.qbysUGP4yzJhl6d5QpN48Q</string>
+    <string name="user_location_permission_explanation">위치 정보 수집해야 한다</string>
+    <string name="user_location_permission_not_granted">위치 정보 접근 실패</string>
 </resources>
