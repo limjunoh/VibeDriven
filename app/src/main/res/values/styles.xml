@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NavDrawerTextStyle">
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

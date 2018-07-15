@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.vibedriven.vibedriven"
-        minSdkVersion 23
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -30,9 +30,13 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.2.1'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.6.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization:0.3.0'
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:3.3.0'
 }

@@ -1,73 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:background="@android:color/white"
-        android:id="@+id/topView"
-        android:orientation="vertical"
+    <RelativeLayout
+        android:id="@+id/center"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:id="@+id/topView"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="1">
+            android:layout_height="150dp">
 
-            <TextView
-                android:id="@+id/departureText"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="출발지"
-                android:textAlignment="center" />
+            <LinearLayout
+                android:id="@+id/location_topview"
+                android:background="#B30000FF"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/departure"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="departure" />
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_topview_marker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
+                <TextView
+                    android:id="@+id/location_name"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@android:color/white"
+                    android:text="@string/location_loading_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_border">
+
+                    <TextView
+                        android:id="@+id/departureText"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="출발"
+                        android:textColor="#AAAAAA"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/departure"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="출발지를 검색하세요"
+                        android:textColor="#AAAAAA"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/destinationText"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:text="도착"
+                        android:textColor="#AAAAAA"/>
+
+                    <TextView
+                        android:id="@+id/destination"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="도착지를 검색하세요"
+                        android:textColor="#AAAAAA"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            mapbox:mapbox_cameraTargetLat="37.563534"
+            mapbox:mapbox_cameraTargetLng="126.981402"
+            mapbox:mapbox_styleUrl="mapbox://styles/mapbox/streets-v10"
+            mapbox:mapbox_cameraZoom="11" >
+        </com.mapbox.mapboxsdk.maps.MapView>
 
-            <TextView
-                android:id="@+id/destinationText"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:textAlignment="center"
-                android:text="도착지" />
+        <RelativeLayout
+            android:id="@+id/btn_tracking"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/btn_menu"
+            android:background="@drawable/roundbutton"
+            android:clickable="true"
+            android:focusable="true">
 
-            <TextView
-                android:id="@+id/destination"
-                android:layout_width="1dp"
+            <ImageView
+                android:id="@+id/iv_tracking"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="destination" />
-        </LinearLayout>
-    </LinearLayout>
-    <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_tracking"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/roundbutton"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_menu"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="37.563534"
-        mapbox:mapbox_cameraTargetLng="126.981402"
-        mapbox:mapbox_styleUrl="mapbox://styles/mapbox/streets-v10"
-        mapbox:mapbox_cameraZoom="11" />
+        android:layout_gravity="start"
+        android:background="#000000"
+        mapbox:itemTextAppearance="@style/NavDrawerTextStyle"
+        mapbox:headerLayout="@layout/drawer_header"
+        mapbox:menu="@menu/drawer" >
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@drawable/ic_footer"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:layout_weight="2"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

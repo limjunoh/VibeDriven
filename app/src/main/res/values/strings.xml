@@ -3,4 +3,11 @@
     <string name="mapbox_access_token">pk.eyJ1IjoianVub2giLCJhIjoiY2ppOXBxYTgxMHo4MjNwbXJuczJtMzducSJ9.qbysUGP4yzJhl6d5QpN48Q</string>
     <string name="user_location_permission_explanation">위치 정보 수집해야 한다</string>
     <string name="user_location_permission_not_granted">위치 정보 접근 실패</string>
+    <string name="nav_item_map">지도</string>
+    <string name="nav_item_footprint">발자취</string>
+    <string name="nav_item_setting">설정</string>
+    <string name="nav_item_pairing">기기 연결</string>
+    <string name="nav_item_term">약관</string>
+    <string name="location_loading_text">주소 찾는 중...</string>
+    <string name="location_canfind_text">일치하는 주소가 없습니다.</string>
 </resources>
