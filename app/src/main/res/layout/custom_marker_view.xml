@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="@dimen/marker_size"
+    android:layout_height="@dimen/marker_size"
     android:background="@drawable/circle_colored_border">
 
     <ImageView
